@@ -22,7 +22,7 @@ public class MemoryPersonDao implements PersonDao {
 
     static {
         persons = new ArrayList<>();
-        persons.add(new Person(1, "Bruce", "Phillips", "basketball", "male", MemoryPersonSupportDao.getCountry("US"), 2007, 
+        persons.add(new Person(1, "Bruce", "Phillips", "basketball", "male", "USA", 2007, 
             new Car[]{
                 new Car(1, "Accord", "Honda", 2020, "blue"),
                 new Car(2, "Civic", "Honda", 2021, "red")
@@ -31,7 +31,7 @@ public class MemoryPersonDao implements PersonDao {
                 new Pet(1, "Max", "Dog",  3)
             }, 
         "bphillips@ku.edu", "123-456-9999"));
-        persons.add(new Person(2, "Antonio", "Sanchez", "mtb", "male", MemoryPersonSupportDao.getCountry("ES"), 2002, 
+        persons.add(new Person(2, "Antonio", "Sanchez", "mtb", "male", "Spain", 2002, 
             new Car[]{
                 new Car(4, "Mustang", "Ford", 2022, "black"),
                 new Car(6, "Corolla", "Toyota", 2020, "gray"),
@@ -69,7 +69,6 @@ public class MemoryPersonDao implements PersonDao {
         for (int i = 0; i < persons.size(); i++) {
             Person p = persons.get(i);
             if (p.getPersonId().equals(id)) {
-                person.setCountry(MemoryPersonSupportDao.getCountry(person.getCountry().getCountryId()));
                 persons.set(i, person);
                 break;
             }
@@ -85,7 +84,6 @@ public class MemoryPersonDao implements PersonDao {
             }
         }
         person.setPersonId(lastId + 1);
-        person.setCountry(MemoryPersonSupportDao.getCountry(person.getCountry().getCountryId()));
         persons.add(person);
     }
 

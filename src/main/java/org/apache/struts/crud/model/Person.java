@@ -16,7 +16,7 @@ public class Person implements Cloneable {
     private String lastName;
     private String sport;
     private String gender;
-    private Country country = new Country("", "");
+    private String country;
     private Integer yearOfBirth;
     private Car[] carModels;
     private Pet[] petModels;
@@ -28,7 +28,7 @@ public class Person implements Cloneable {
     }
     
     public Person(Integer id, String firstName, String lastName, String sport, 
-                String gender, Country country, Integer yearOfBirth, Car[] carModels, Pet[] petModels,
+                String gender, String country, Integer yearOfBirth, Car[] carModels, Pet[] petModels,
                 String email, String phoneNumber) {
         this.personId = id;
         this.firstName = firstName;
@@ -83,11 +83,11 @@ public class Person implements Cloneable {
         return gender;
     }
 
-    public void setCountry(Country country) {
+    public void setCountry(String country) {
         this.country = country;
     }
 
-    public Country getCountry() {
+    public String getCountry() {
         return country;
     }
 

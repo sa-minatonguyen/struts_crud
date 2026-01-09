@@ -2,30 +2,19 @@ package org.apache.struts.crud.dao;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.apache.struts.crud.model.Country;
 
 /**
  * @author bruce phillips
  * @author antonio sanchez
  */
 public class MemoryPersonSupportDao implements PersonSupportDao {
-    private static final Country[] countries;
-    private static final Map<String, Country> countriesMap;
+    private static final String[] countries;
     private static final String[] genders = {"male", "female"};
     private static final String[] sports = {"football", "baseball", "basketball", "mtb" };
     private static final String [] carModelsAvailable = {"Ford", "Chrysler", "Toyota", "Nissan", "Seat"};
 
     static {
-        countries = new Country[] {new Country("ES", "Spain"),
-                    new Country("IE", "Ireland"),
-                    new Country("IT", "Italy"),
-                    new Country("PL", "Poland"),
-                    new Country("US", "Usa") };
-        
-        countriesMap = new HashMap<>();
-        for (Country c : countries) {
-            countriesMap.put(c.getCountryId(), c);
-        }
+        countries = new String[] {"Spain", "Ireland", "Italy", "Poland", "Usa"};
     }
 
 
@@ -46,11 +35,7 @@ public class MemoryPersonSupportDao implements PersonSupportDao {
     }
 
     @Override
-    public Country[] getCountries() {
+    public String[] getCountries() {
         return countries;
-    }
-    
-    static Country getCountry(String countryId) {
-        return countriesMap.get(countryId);
     }
 }

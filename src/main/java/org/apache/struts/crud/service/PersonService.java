@@ -1,6 +1,5 @@
 package org.apache.struts.crud.service;
 
-import org.apache.struts.crud.model.Country;
 import org.apache.struts.crud.model.Person;
 
 /**
@@ -22,7 +21,7 @@ public interface PersonService {
     
     void deletePerson(Integer id);
     
-    Country[] getCountries();
+    String[] getCountries();
     
     String[] getCarModels();
     

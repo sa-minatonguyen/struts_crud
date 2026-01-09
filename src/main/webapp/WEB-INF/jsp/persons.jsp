@@ -41,7 +41,7 @@
                     <td class="nowrap"><s:property value="phoneNumber"/></td>
                     <td class="nowrap"><s:property value="sport"/></td>
                     <td class="nowrap"><s:property value="gender"/></td>
-                    <td class="nowrap"><s:property value="country.countryName"/></td>
+                    <td class="nowrap"><s:property value="country"/></td>
                     <td class="nowrap">
                         <%
                             int currentYear = java.util.Calendar.getInstance().get(java.util.Calendar.YEAR);

@@ -3,7 +3,6 @@ package org.apache.struts.crud.action;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.struts.crud.model.Car;
-import org.apache.struts.crud.model.Country;
 import org.apache.struts.crud.model.Person;
 import org.apache.struts.crud.model.Pet;
 import org.apache.struts.crud.service.CarService;
@@ -35,7 +34,7 @@ public class PersonAction extends ActionSupport implements Preparable {
     private Person[] persons;
     private String[] sports;
     private String[] genders;
-    private Country[] countries;
+    private String[] countries;
     private Car[] carModelsAvailable;
     private Pet[] petModelsAvailable;
     private Integer[] selectedCarIds;
@@ -194,7 +193,7 @@ public class PersonAction extends ActionSupport implements Preparable {
         this.selectedCarIds = selectedCarIds;
     }
 
-    public Country[] getCountries() {
+    public String[] getCountries() {
         return countries;
     }
 

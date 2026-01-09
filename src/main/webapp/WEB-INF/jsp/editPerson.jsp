@@ -26,10 +26,13 @@
             <s:textfield key="person.firstName" /> 
             <s:textfield key="person.lastName" /> 
             <s:textfield key="person.email" />
-            <s:textfield key="person.phoneNumber" />
+            <s:textfield key="person.phoneNumber">
+                <s:param name="pattern">\\d{3}-\\d{3}-\\d{4}</s:param>
+                <s:param name="placeholder">123-456-7890</s:param>
+            </s:textfield>
             <s:select key="person.sport" list="sports" />
             <s:radio key="person.gender" list="genders" />
-            <s:select name="person.country.countryId" list="countries" listKey="countryId" listValue="countryName" label="%{getText('person.country')}"/>
+            <s:select key="person.country" list="countries"/>
             <s:textfield key="person.yearOfBirth" label="Year of Birth">
                 <s:param name="type">number</s:param>
                 <s:param name="pattern">\\d+</s:param>

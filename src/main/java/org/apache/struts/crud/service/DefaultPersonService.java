@@ -4,7 +4,6 @@ import org.apache.struts.crud.dao.MemoryPersonDao;
 import org.apache.struts.crud.dao.MemoryPersonSupportDao;
 import org.apache.struts.crud.dao.PersonDao;
 import org.apache.struts.crud.dao.PersonSupportDao;
-import org.apache.struts.crud.model.Country;
 import org.apache.struts.crud.model.Person;
 
 /**
@@ -50,7 +49,7 @@ public class DefaultPersonService implements PersonService {
     }
 
     @Override
-    public Country[] getCountries() {
+    public String[] getCountries() {
         return personSupportDao.getCountries();
     }
 
