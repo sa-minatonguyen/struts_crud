@@ -27,18 +27,14 @@ public class DefaultPetService implements PetService {
 
     @Override
     public Pet getPet(Integer id) {
-        Pet pet = petDatabase.get(id);
-        if (pet != null) {
-            return (Pet) pet.clone();
-        }
-        return null;
+        return petDatabase.get(id);
     }
 
     @Override
     public Pet[] getAllPets() {
         List<Pet> pets = new ArrayList<>();
         for (Pet pet : petDatabase.values()) {
-            pets.add((Pet) pet.clone());
+            pets.add(pet);
         }
         return pets.toArray(new Pet[0]);
     }
@@ -46,7 +42,7 @@ public class DefaultPetService implements PetService {
     @Override
     public void updatePet(Pet pet) {
         if (pet.getPetId() != null && petDatabase.containsKey(pet.getPetId())) {
-            petDatabase.put(pet.getPetId(), (Pet) pet.clone());
+            petDatabase.put(pet.getPetId(), pet);
         }
     }
 
@@ -54,7 +50,7 @@ public class DefaultPetService implements PetService {
     public void insertPet(Pet pet) {
         Integer newId = idGenerator.getAndIncrement();
         pet.setPetId(newId);
-        petDatabase.put(newId, (Pet) pet.clone());
+        petDatabase.put(newId, pet);
     }
 
     @Override

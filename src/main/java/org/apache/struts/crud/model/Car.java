@@ -73,13 +73,4 @@ public class Car implements Cloneable {
                 ", color='" + color + '\'' +
                 '}';
     }
-
-    @Override
-    public Object clone() {
-        try {
-            return super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException(e);
-        }
-    }
 }

@@ -48,11 +48,7 @@ public class MemoryPersonDao implements PersonDao {
     public Person getPerson(Integer id) {
         for (Person p : persons) {
             if (p.getPersonId().equals(id)) {
-                try {
-                    return (Person) p.clone();
-                } catch (CloneNotSupportedException ex) {
-                    LOG.error("Unexpected exception cloning Person");
-                }
+                return p;
             }
         }
         return null;

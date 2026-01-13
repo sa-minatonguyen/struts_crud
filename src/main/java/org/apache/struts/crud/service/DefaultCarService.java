@@ -32,18 +32,14 @@ public class DefaultCarService implements CarService {
 
     @Override
     public Car getCar(Integer id) {
-        Car car = carDatabase.get(id);
-        if (car != null) {
-            return (Car) car.clone();
-        }
-        return null;
+        return carDatabase.get(id);
     }
 
     @Override
     public Car[] getAllCars() {
         List<Car> cars = new ArrayList<>();
         for (Car car : carDatabase.values()) {
-            cars.add((Car) car.clone());
+            cars.add(car);
         }
         return cars.toArray(new Car[0]);
     }
@@ -51,7 +47,7 @@ public class DefaultCarService implements CarService {
     @Override
     public void updateCar(Car car) {
         if (car.getCarId() != null && carDatabase.containsKey(car.getCarId())) {
-            carDatabase.put(car.getCarId(), (Car) car.clone());
+            carDatabase.put(car.getCarId(), car);
         }
     }
 
@@ -59,7 +55,7 @@ public class DefaultCarService implements CarService {
     public void insertCar(Car car) {
         Integer newId = idGenerator.getAndIncrement();
         car.setCarId(newId);
-        carDatabase.put(newId, (Car) car.clone());
+        carDatabase.put(newId, car);
     }
 
     @Override

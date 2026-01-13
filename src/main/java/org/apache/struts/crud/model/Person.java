@@ -132,11 +132,6 @@ public class Person implements Cloneable {
     }
     
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
-    }
-
-    @Override
     public String toString() {
         return "Id: " + getPersonId() + " | "
                 + "First Name: " + getFirstName() + " | "
